@@ -2,9 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('BUILD') {
             steps {
-                echo 'Hello World'
+		sh '''
+			#!/bin/bash
+			mkdir -p /home/ec2-user/cpr		
+			git clone https://github.com/vijaysh93/cproject.git
+			cd cproject
+			make
+		'''
             }
         }
     }
