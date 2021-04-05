@@ -6,7 +6,7 @@ pipeline {
             steps {
 		sh '''
 			#!/bin/bash
-			sudo mkdir -p /home/ec2-user/cpr		
+			cd /home/ec2-user/pipeline
 			git clone https://github.com/vijaysh93/cproject.git
 			cd cproject
 			make
