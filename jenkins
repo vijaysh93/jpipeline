@@ -7,10 +7,12 @@ pipeline {
 		sh '''
 			#!/bin/bash
 			cd /home/ec2-user/pipeline
-			rm -rf *
 			git clone https://github.com/vijaysh93/cproject.git
+			if [ $? -ne 0 ];then
+			git pull https://github.com/vijaysh93/cproject.git
 			cd cproject
 			make
+			fi
 		'''
             }
         }
