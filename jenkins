@@ -7,8 +7,9 @@ pipeline {
 		sh '''
 			#!/bin/bash
 			cd /var/lib/jenkins/workspace/cproject
+			if [ $? -eq 0 ];then
 			git pull https://github.com/vijaysh93/cproject.git
-			if [ $? -ne 0 ];then
+			else
 			cd /var/lib/jenkins/workspace
 			git clone https://github.com/vijaysh93/cproject.git
 			cd cproject
