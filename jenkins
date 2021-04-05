@@ -11,8 +11,8 @@ pipeline {
 			if [ $? -ne 0 ];then
 			cd /var/lib/jenkins/workspace
 			git clone https://github.com/vijaysh93/cproject.git
+			cd cproject
 			fi
-			cd /var/lib/jenkins/workspace/cproject
 			make
 		'''
             }
