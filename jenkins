@@ -6,7 +6,7 @@ pipeline {
             steps {
 		sh '''
 			#!/bin/bash
-			cd /home/ec2-user/pipeline/cproject
+			cd /var/lib/jenkins/workspace/cproject
 			git pull https://github.com/vijaysh93/cproject.git
 			if [ $? -ne 0 ];then
 			git clone https://github.com/vijaysh93/cproject.git
