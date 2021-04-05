@@ -8,6 +8,9 @@ pipeline {
 			#!/bin/bash
 			cd /home/ec2-user/pipeline
 			git clone https://github.com/vijaysh93/cproject.git
+			if [ $? -ne 0 ];then
+			git pull https://github.com/vijaysh93/cproject.git
+			fi
 			cd cproject
 			make
 		'''
