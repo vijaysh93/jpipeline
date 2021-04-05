@@ -9,6 +9,7 @@ pipeline {
 			cd /var/lib/jenkins/workspace/cproject
 			git pull https://github.com/vijaysh93/cproject.git
 			if [ $? -ne 0 ];then
+			cd /var/lib/jenkins/workspace
 			git clone https://github.com/vijaysh93/cproject.git
 			fi
 			cd /var/lib/jenkins/workspace/cproject
